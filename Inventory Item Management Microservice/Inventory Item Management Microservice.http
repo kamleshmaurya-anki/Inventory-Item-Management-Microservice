@@ -1,0 +1,32 @@
+@Inventory_Item_Management_Microservice_HostAddress = http://localhost:5031
+
+### Create Item
+POST {{Inventory_Item_Management_Microservice_HostAddress}}/api/inventory-items
+Content-Type: application/json
+
+{
+  "itemName": "Wireless Mouse",
+  "category": "Electronics",
+  "quantity": 50,
+  "isActive": true
+}
+
+### Get Item by ID
+GET {{Inventory_Item_Management_Microservice_HostAddress}}/api/inventory-items/{{itemId}}
+
+### List Items (paginated)
+GET {{Inventory_Item_Management_Microservice_HostAddress}}/api/inventory-items?page=1&pageSize=10&includeInactive=false
+
+### Update Item
+PUT {{Inventory_Item_Management_Microservice_HostAddress}}/api/inventory-items/{{itemId}}
+Content-Type: application/json
+
+{
+  "itemName": "Wireless Mouse Pro",
+  "category": "Electronics",
+  "quantity": 45,
+  "isActive": true
+}
+
+### Soft Delete Item
+DELETE {{Inventory_Item_Management_Microservice_HostAddress}}/api/inventory-items/{{itemId}}
